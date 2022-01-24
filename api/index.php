@@ -22,7 +22,7 @@
 
       $sql = "INSERT INTO genral (username,store_name,latitude,longitude,category,user_phone,user_email,userimage) VALUES ('$username','$userstore','$userlati','$userlongi','$storecategory','$userpho','$useremail','$image')";
       mysqli_query($db,$sql); //store data into db
-      if(is_readable($gs_name) && $_FILES['image']['tmp_name'] == 0){
+      if(is_readable($gs_name) && $_FILES['image']['error'] == 0){
         move_uploaded_file($gs_name, 'images/'.$_FILES['image']['tmp_name']);
           $msg = "DATA UPLOADED SUCCESFULLY";
       }else{
