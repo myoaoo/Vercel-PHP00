@@ -5,8 +5,8 @@
     //@move_uploaded_file($_FILES['profpic']['tmp_name'], $target_path)
       //define ('SITE_ROOT', realpath(dirname(__FILE__)));
       //move_uploaded_file($_FILES['file']['tmp_name'], SITE_ROOT.'/static/images/slides/1/1.jpg');
-      echo file_get_contents(__DIR__ . '/../src/users.json');
-      $target = __DIR__ . '../images/'.basename($_FILES['image']['name']);
+      $gs_name = $_FILES['image']['name'];
+      //$target = __DIR__ . '../images/'.basename($_FILES['image']['name']);
 
       //connect to the data base
       $db = mysqli_connect("sql6.freemysqlhosting.net","sql6467804","lsCL6PbqR9","sql6467804","3306");
@@ -22,7 +22,8 @@
 
       $sql = "INSERT INTO genral (username,store_name,latitude,longitude,category,user_phone,user_email,userimage) VALUES ('$username','$userstore','$userlati','$userlongi','$storecategory','$userpho','$useremail','$image')";
       mysqli_query($db,$sql); //store data into db
-      if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
+      if(is_readable($gs_name) && $_FILES['image']['tmp_name'] == 0){
+        move_uploaded_file($gs_name, 'images/'.$_FILES['image']['tmp_name']);
           $msg = "DATA UPLOADED SUCCESFULLY";
       }else{
           $msg = "DATA NOT UPLOADED SUCCESFULLY";
