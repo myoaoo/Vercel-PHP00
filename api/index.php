@@ -1,5 +1,4 @@
 <?php 
-header('Content-Type: application/json');
   if (isset($_POST['upload'])) {
     //$destination_path = getcwd().DIRECTORY_SEPARATOR;
     //$target_path = $destination_path/basename($_FILES["image"]["name"]);
