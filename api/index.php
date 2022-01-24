@@ -1,10 +1,6 @@
 <?php
-// Create connection
-$conn = mysqli_connect("localhost","id17762561_root","9(Jp1lvf(*p=hBS[","id17762561_datastore");
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello world!<br>";
+echo "I'm about to learn PHP!<br>";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
 ?>
