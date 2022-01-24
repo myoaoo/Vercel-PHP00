@@ -70,7 +70,7 @@
     </style>
     <body id="body">
         <center><h2>Enter Store Information</h2></center>
-        <form action="seller.php" method="post" class="data" enctype="multipart/form-data">
+        <form action="index.php" method="post" class="data" enctype="multipart/form-data">
         <label for="name"><b>User Name</b></label>
         <input type="text" class="lable" placeholder="Enter name" name="name" required>
         <br>
