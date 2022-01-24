@@ -3,7 +3,7 @@
       $target = "images/".basename($_FILES['image']['name']);
 
       //connect to the data base
-      $db = mysqli_connect("127.0.0.1","id17762561_root","9(Jp1lvf(*p=hBS[","id17762561_datastore","3306");
+      $db = mysqli_connect("sql6.freemysqlhosting.net","sql6467804","lsCL6PbqR9","sql6467804","3306");
 
       $username = $_POST['name'];
       $userstore = $_POST['store'];
