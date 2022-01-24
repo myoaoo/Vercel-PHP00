@@ -1,6 +1,11 @@
 <?php 
   if (isset($_POST['upload'])) {
-      $target = "images/".basename($_FILES['image']['name']);
+    $destination_path = getcwd().DIRECTORY_SEPARATOR;
+    $target_path = $destination_path . basename( $_FILES["image"]["name"]);
+    //@move_uploaded_file($_FILES['profpic']['tmp_name'], $target_path)
+      //define ('SITE_ROOT', realpath(dirname(__FILE__)));
+      //move_uploaded_file($_FILES['file']['tmp_name'], SITE_ROOT.'/static/images/slides/1/1.jpg');
+      //$target = "images/".realpath(dirname($_FILES['image']['name']));
 
       //connect to the data base
       $db = mysqli_connect("sql6.freemysqlhosting.net","sql6467804","lsCL6PbqR9","sql6467804","3306");
@@ -16,7 +21,7 @@
 
       $sql = "INSERT INTO genral (username,store_name,latitude,longitude,category,user_phone,user_email,userimage) VALUES ('$username','$userstore','$userlati','$userlongi','$storecategory','$userpho','$useremail','$image')";
       mysqli_query($db,$sql); //store data into db
-      if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
+      if(move_uploaded_file($_FILES['image']['tmp_name'],$target_path)){
           $msg = "DATA UPLOADED SUCCESFULLY";
       }else{
           $msg = "DATA NOT UPLOADED SUCCESFULLY";
