@@ -1,8 +1,15 @@
 {
-    "functions": {
-      "api/*.php": {
-        "runtime": "vercel-php@0.4.0",
-        "config": { "includeFiles": ["images/**"] }
-      }
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.0.17"
+    }
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/$1" }
+  ],
+  "build": {
+    "env": {
+      "NOW_PHP_DEBUG": "1"
     }
   }
+}
