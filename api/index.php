@@ -1,10 +1,12 @@
 <?php 
+header('Content-Type: application/json');
   if (isset($_POST['upload'])) {
     //$destination_path = getcwd().DIRECTORY_SEPARATOR;
     //$target_path = $destination_path/basename($_FILES["image"]["name"]);
     //@move_uploaded_file($_FILES['profpic']['tmp_name'], $target_path)
       //define ('SITE_ROOT', realpath(dirname(__FILE__)));
       //move_uploaded_file($_FILES['file']['tmp_name'], SITE_ROOT.'/static/images/slides/1/1.jpg');
+      echo file_get_contents(__DIR__ . '/../src/users.json');
       $target = "images/".basename($_FILES['image']['name']);
 
       //connect to the data base
